@@ -1,0 +1,32 @@
+{
+  "name": "cypress-bdd",
+  "version": "1.0.0",
+  "description": "BDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/29rahul09/Cypress-BDD.git"
+  },
+  "keywords": [
+    "cucumber",
+    "BDD"
+  ],
+  "author": "rahul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/29rahul09/Cypress-BDD/issues"
+  },
+  "homepage": "https://github.com/29rahul09/Cypress-BDD#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.2",
+    "@cypress/webpack-preprocessor": "^5.16.1",
+    "cypress": "^12.3.0",
+    "cypress-fill-command": "^1.0.2"
+  },
+  "dependencies": {
+    "webpack": "^5.75.0"
+  }
+}

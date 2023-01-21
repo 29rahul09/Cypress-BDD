@@ -1,0 +1,7 @@
+{
+  "userField": "input[placeholder='Username']",
+  "passwordField":"input[placeholder='Password']",
+  "loginButton": "button[type='submit']",
+  "Username":"Admin",
+  "Password":"admin123"
+}
