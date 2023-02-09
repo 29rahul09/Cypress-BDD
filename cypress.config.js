@@ -3,6 +3,8 @@ const webpack = require("@cypress/webpack-preprocessor");
 const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 
 async function setupNodeEvents(on, config) {
+  screenshotOnRunFailure = true;
+  require("cypress-mochawesome-reporter/plugin")(on); // for html reports
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
 
@@ -35,9 +37,11 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
+  reporter: "cypress-mochawesome-reporter", // for html reports
   e2e: {
-    watchForFileChanges : false,
-    chromeWebSecurity : false,
+    defaultCommandTimeout: 6000,
+    watchForFileChanges: false,
+    chromeWebSecurity: false,
     specPattern: "**/*.feature",
     setupNodeEvents,
   },

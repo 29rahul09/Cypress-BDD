@@ -18,6 +18,6 @@ When("I click on Questionbank", () => {
 
 Then("I get the title", () => {
   cy.wait(5000)
-  cy.title().should('be.empty')
+  cy.title().should('contain','Question Bank')
 });
 
