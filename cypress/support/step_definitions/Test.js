@@ -4,8 +4,8 @@ Given("I visit google.com", () => {
   cy.visit('https://www.google.com')
 });
 
-Then("I search for doubtnut.com", () => {
-  cy.get('.gLFyf').type('doubtnut.com{enter}')
+Then("I search for bmj global health", () => {
+  cy.get('.gLFyf').type('bmj global health{enter}')
 });
 
 Then("I select videos", () => {

@@ -11,3 +11,7 @@ npm-debug.log
 
 server/newrelic.js
 server/middlewares/generated.serverEntry.js
+
+# media files
+cypress\videos\mask.feature.mp4
+cypress\reports\html\.jsons
