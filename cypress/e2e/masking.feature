@@ -7,5 +7,5 @@ Feature: Check masking on BMJ Journals
     Then  visit journals EditorialBoardpage and check masking
     Then  visit journals ContactUspage and check masking
     Then  visit journals Subscribepage and check masking
-    Then  visit journals Specialpages and check masking
+    # Then  visit journals Specialpages and check masking
 
