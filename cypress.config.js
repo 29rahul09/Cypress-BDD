@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const fs = require('fs')
 const webpack = require("@cypress/webpack-preprocessor");
 const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 
@@ -32,6 +33,20 @@ async function setupNodeEvents(on, config) {
     })
   );
 
+  on('task', {
+    countFiles(folderName) {
+      return new Promise((resolve, reject) => {
+        fs.readdir(folderName, (err, files) => {
+          if (err) {
+            return reject(err)
+          }
+
+          resolve(files)
+        })
+      })
+    },
+  })
+
   // Make sure to return the config object as it might have been modified by the plugin.
   return config;
 }
@@ -41,10 +56,11 @@ module.exports = defineConfig({
   e2e: {
     viewportWidth: 1100,
     viewportHeight: 1100,
-    requestTimeout: 3000,
+    requestTimeout: 6000,
+    pageLoadTimeout:90000,
     defaultCommandTimeout: 6000,
-    retries: 1,
-    watchForFileChanges: false,
+    retries: 0,
+    watchForFileChanges: true,
     chromeWebSecurity: false,
     specPattern: "**/*.feature",
     setupNodeEvents,
