@@ -54,8 +54,8 @@ async function setupNodeEvents(on, config) {
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter", // for html reports
   e2e: {
-    viewportWidth: 1100,
-    viewportHeight: 1100,
+    viewportWidth: 1440,
+    viewportHeight: 900,
     requestTimeout: 6000,
     pageLoadTimeout:90000,
     defaultCommandTimeout: 6000,

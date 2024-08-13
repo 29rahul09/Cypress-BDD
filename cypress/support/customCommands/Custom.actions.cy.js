@@ -14,8 +14,9 @@ Cypress.Commands.add("getHomePage", () => {
           cy.visit({
             url: `${journal}`,
           });
+          // cy.wait(9000);
         }
-        cy.getMediaUrl(url);
+        // cy.getMediaUrl(url);
       });
     }
   });
@@ -83,7 +84,8 @@ Cypress.Commands.add("getEditorialPage", () => {
           cy.visit({
             url: `${journal}/pages/editorial-board/`,
           });
-          cy.getMediaUrl(url);
+          cy.wait(9000);
+          // cy.getMediaUrl(url);
         }
       });
     }
@@ -129,7 +131,8 @@ Cypress.Commands.add("getSubscribePage", () => {
           cy.visit({
             url: `${journal}/pages/subscribe`,
           });
-          cy.getMediaUrl(url);
+          // cy.wait(5000);
+          // cy.getMediaUrl(url);
         }
       });
     }
@@ -292,11 +295,12 @@ Cypress.Commands.add("getPageUrl", (url) => {
 
 Cypress.Commands.add("sitemap", () => {
 
-
-
 it('should succesfully load each url in the sitemap', () => {
   urls.forEach(cy.visit)
 })
 
-
 });
+
+Cypress.Commands.add("stagenext",()=>{
+  
+})

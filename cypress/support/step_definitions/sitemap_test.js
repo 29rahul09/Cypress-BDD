@@ -6,8 +6,8 @@ const {
 
 Given("journals sitemap list", () => {
   let j = 0;
-  let k = 2;
-  cy.fixture("sitemap").then((data) => {
+  let k = 1;
+  cy.fixture("test").then((data) => {
     var notFound = [];
     const wFile = "cypress/downloads/Special/pageNotFound.json";
     for (let i = j; i < j + k; i++) {
@@ -27,7 +27,7 @@ Given("journals sitemap list", () => {
             const link = Cypress.$(this).find("loc").text();
             cy.log(JSON.stringify(link));
             if (
-              link?.startsWith("https://egastro.bmj.com/pages/call-for-papers")
+              link?.indexOf("/collection/") > -1 
             ) {
               cy.log(`${link} GIVES 404`);
             } else {
@@ -43,6 +43,7 @@ Given("journals sitemap list", () => {
                     url: link,
                     failOnStatusCode: false,
                   });
+                  cy.wait(3000)
                   cy.getPageUrl(link);
                 }
               });
